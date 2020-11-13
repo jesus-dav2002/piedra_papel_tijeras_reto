@@ -1,9 +1,12 @@
 var user;
-var piedra = document.getElementById("piedra_id").addEventListener("click", selection1);
-var papel = document.getElementById("papel_id").addEventListener("click", selection2);
-var tijeras = document.getElementById("tijeras_id").addEventListener("click", selection3);
+var botones = document.getElementsByClassName("boton");
 var bot_play = Math.floor(Math.random() * ((3+1)-1)+1);
+console.log(bot_play);
 
+for(var i = 0; i < botones.length; i++)
+{
+    botones[i].addEventListener("click", selection, false)
+}
 function play() {
 if(user === bot_play)
 {
@@ -17,26 +20,28 @@ alert(confrontation);
     }
 }
 
-function selection1()
+function selection()
 {
-    user = 1;
-    play();
-    console.log(user);
+   switch(this.id)
+   {
+    case "piedra_id":
+        user = 1 ;
+        console.log(user);
+        play();
+        break;
+
+    case "papel_id":
+        user = 2 ;
+        console.log(user);
+        play();
+        break;
+
+    case "tijeras_id" :
+        user = 3 ;
+        console.log(user);
+        play();
+        break;
+
+   }
 }
-function selection2()
-{
-    user = 2;
-    play();
-    console.log(user);
-}
-
-function selection3()
-{
-    user = 3;
-    play();
-    console.log(user);
-}
-
-
-
 console.log(bot_play);
