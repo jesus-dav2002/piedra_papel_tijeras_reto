@@ -13,7 +13,7 @@ if(user === G)
 else{
 var confrontation = (user === 1 && G === 3) || 
 (user === 2 && G === 1) || 
-(user === 3 && G === 2) ? "Ganasteeeee!!" : "perdiste, intenta otra vez con el boton F5";
+(user === 3 && G === 2) ? "Ganasteeeee!!" : "jaja, te gane. presiona F5 si quieres intentarlo otra vez";
 alert(confrontation);
     }
 }
